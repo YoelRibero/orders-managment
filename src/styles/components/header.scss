@@ -1,0 +1,19 @@
+.header {
+  padding: $spacer 0;
+  &-container {
+    align-items: center;
+    display: flex;
+
+    svg {
+      border-radius: 50%;
+      box-shadow: $shadow-avatar;
+      height: 40px;
+      margin-right: $spacer / 2;
+      width: 40px;
+    }
+
+    p {
+      font-weight: 600;
+    }
+  }
+}
