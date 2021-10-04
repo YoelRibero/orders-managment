@@ -17,19 +17,7 @@
     }
     &--iconForm {
       figure {
-        align-items: center;
-        background: $light-blue;
-        border: $border-icons;
-        border-radius: 50%;
-        display: flex;
-        height: 45px;
-        justify-content: center;
-        margin: 0;
-        width: 45px;
-      }
-      svg {
-        height: 15px;
-        width: 15px;
+        @include icons-style;
       }
     }
   }

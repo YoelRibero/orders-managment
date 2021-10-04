@@ -6,11 +6,32 @@ $font-size-s: $font-size-base * .9375;
 $font-size-xs: $font-size-base * .875;
 $font-size-tiny: $font-size-base * .75;
 // colors
+$white: #fff;
 $primary: #ce96c1;
+$card-today: #eeecf8;
+$card-tomorrow: #f4f8ec;
 $light-blue: #eaf7f7;
+$border-card: #878783;
 $border-color: #a9b1b1;
 $border-icons: 2px dashed $border-color;
 $muted: #777;
+// mixins
+@mixin icons-style($bg: $light-blue) {
+  align-items: center;
+  background: $bg;
+  border: $border-icons;
+  border-radius: 50%;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  margin: 0;
+  width: 45px;
+
+  svg {
+    height: 15px;
+    width: 15px;
+  }
+}
 
 * {
   box-sizing: border-box;

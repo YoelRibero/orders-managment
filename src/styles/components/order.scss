@@ -1,0 +1,42 @@
+.orders {
+  display: grid;
+  grid-gap: $spacer;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.order {
+  background-color: $card-today;
+  border: 1px solid $border-card;
+  border-radius: $spacer * 1.5;
+  padding: $spacer;
+  position: relative;
+  text-align: center;
+  &.tomorrow {
+    background-color: $card-tomorrow;
+  }
+  &::after {
+    border: 1px solid $border-card;
+    border-radius: $spacer * 1.5;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate($spacer * .3, $spacer * .3);
+    z-index: -1;
+  }
+  &-icon {
+    @include icons-style($white);
+    margin: auto;
+  }
+  h5 {
+    font-size: $font-size-base;
+    margin: $spacer / 2 0;
+  }
+  p {
+    color: $muted;
+    font-size: $font-size-xs;
+    margin: 0;
+  }
+}
