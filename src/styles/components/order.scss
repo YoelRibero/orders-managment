@@ -1,19 +1,17 @@
 .orders {
   display: grid;
   grid-gap: $spacer;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .order {
+  align-items: center;
   background-color: $card-today;
   border: 1px solid $border-card;
   border-radius: $spacer * 1.5;
+  display: flex;
   padding: $spacer;
   position: relative;
-  text-align: center;
-  &.tomorrow {
-    background-color: $card-tomorrow;
-  }
   &::after {
     border: 1px solid $border-card;
     border-radius: $spacer * 1.5;
@@ -28,15 +26,20 @@
   }
   &-icon {
     @include icons-style($white);
-    margin: auto;
+    flex-shrink: 0;
+    margin-right: $spacer;
   }
-  h5 {
+  &-name {
     font-size: $font-size-base;
-    margin: $spacer / 2 0;
+    margin: 0 0 $spacer / 2;
   }
-  p {
+  &-description, &-date {
     color: $muted;
     font-size: $font-size-xs;
     margin: 0;
+  }
+  &-price {
+    margin: $spacer 0 0;
+    font-size: $font-size-base;
   }
 }

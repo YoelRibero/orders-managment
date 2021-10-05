@@ -2,6 +2,7 @@
   &-top {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     &--title {
@@ -16,8 +17,20 @@
       }
     }
     &--iconForm {
+      button {
+        background-color: transparent;
+        border: 0;
+      }
       figure {
         @include icons-style;
+        svg {
+          transition: all ease-out .3s;
+        }
+      }
+      &.active {
+        svg {
+          transform: rotate(225deg);
+        }
       }
     }
   }

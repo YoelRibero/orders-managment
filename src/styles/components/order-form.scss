@@ -1,0 +1,65 @@
+.form {
+  max-height: 0;
+  overflow: hidden;
+  transition: all ease-in-out .5s;
+  width: 100%;
+  &.show {
+    margin-top: $spacer;
+    max-height: 500px;
+  }
+  &-field {
+    margin-bottom: $spacer;
+    position: relative;
+    width: 100%;
+    label {
+      color: $muted;
+      display: block;
+      font-size: $font-size-xs;
+    }
+    input {
+      border: 1px solid $border-color;
+      border-radius: 3px;
+      padding: $spacer / 2;
+      width: 100%;
+    }
+    textarea {
+      border-color: $border-color;
+      border-radius: 3px;
+      min-height: 100px;
+      padding: $spacer / 2;
+      width: 100%;
+    }
+    &:last-child {
+      label {
+        position: relative;
+      }
+    }
+  }
+  &-action {
+    text-align: right;
+    button {
+      background-color: $primary;
+      border: 0;
+      border-radius: 5px;
+      color: $white;
+      cursor: pointer;
+      padding: $spacer / 2 $spacer;
+      transition: all ease .3s;
+      &:hover {
+        background-color: lighten($primary, 5);
+      }
+    }
+  }
+  &-message {
+    background-color: $card-today;
+    border-radius: 5px;
+    color: $primary;
+    font-weight: 600;
+    margin-top: $spacer;
+    padding: $spacer / 2;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+  }
+}
