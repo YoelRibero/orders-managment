@@ -1,0 +1,9 @@
+.footer {
+  color: $muted;
+  font-size: $font-size-tiny;
+  padding: $spacer * 3 0 $spacer;
+  text-align: center;
+  p {
+    margin: 0;
+  }
+}

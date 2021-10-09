@@ -29,6 +29,9 @@
     flex-shrink: 0;
     margin-right: $spacer;
   }
+  &-summary {
+    width: 100%;
+  }
   &-name {
     font-size: $font-size-base;
     margin: 0 0 $spacer / 2;
@@ -41,5 +44,17 @@
   &-price {
     margin: $spacer 0 0;
     font-size: $font-size-base;
+  }
+  &-actions {
+    margin-top: $spacer * 1.5;
+    text-align: right;
+    button {
+      &:first-child {
+        margin-right: $spacer / 2;
+      }
+      &:last-child {
+        background-color: $danger-color;
+      }
+    }
   }
 }

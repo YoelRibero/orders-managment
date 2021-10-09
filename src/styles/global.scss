@@ -1,10 +1,13 @@
 $spacer: 1rem;
+
 $shadow-avatar: 0px 3px 7px rgba(0, 0, 0, .2);
+
 // font sizes
 $font-size-base: 1rem;
 $font-size-s: $font-size-base * .9375;
 $font-size-xs: $font-size-base * .875;
 $font-size-tiny: $font-size-base * .75;
+
 // colors
 $white: #fff;
 $primary: #ce96c1;
@@ -15,6 +18,8 @@ $border-card: #878783;
 $border-color: #a9b1b1;
 $border-icons: 2px dashed $border-color;
 $muted: #777;
+$danger-color: #7a0012;
+
 // mixins
 @mixin icons-style($bg: $light-blue) {
   align-items: center;
@@ -47,6 +52,21 @@ body {
   padding: 0;
 }
 
+button {
+  background-color: $primary;
+  border: 0;
+  border-radius: 3px;
+  color: $white;
+  cursor: pointer;
+  font-size: $font-size-tiny;
+  padding: $spacer / 2;
+}
+
 .container {
   padding: 0 $spacer;
+
+  @media screen and(min-width: 1024px) {
+    margin: auto;
+    max-width: 1024px;
+  }
 }

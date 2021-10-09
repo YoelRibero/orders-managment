@@ -17,9 +17,16 @@ const MONTHS = [
   'Diciembre'
 ]
 
-const Order = ({ name, description, price, phone, date }) => {
+const Order = ({ name, description, price, phone, date, id, setOrders }) => {
   const newDate = new Date(date);
-  const dateFormatter = `${newDate.getDate()} de ${MONTHS[newDate.getMonth()]} del ${newDate.getFullYear()}`
+  const dateFormatter = `${newDate.getDate()} de ${MONTHS[newDate.getMonth()]} del ${newDate.getFullYear()}`;
+
+  const handleClick = (orderId) => {
+    const orders = window.localStorage.getItem('orders');
+    const ordersFiltered = JSON.parse(orders).filter(order => order.id !== orderId);
+    window.localStorage.setItem('orders', JSON.stringify(ordersFiltered));
+    setOrders(ordersFiltered);
+  }
   return (
     <article className='order'>
       <figure className="order-icon">
@@ -31,6 +38,10 @@ const Order = ({ name, description, price, phone, date }) => {
         { phone && <small className='order-phone'>Tel: { phone }</small> }
         { date && <p className='order-date'>Fecha de entrega: <strong>{ dateFormatter }</strong></p> }
         <h6 className="order-price">${ price }</h6>
+        <div className="order-actions">
+          <button type='button' onClick={() => handleClick(id)}>Pedido entregado</button>
+          <button type='button' onClick={() => handleClick(id)}>Cancelar Pedido</button>
+        </div>
       </div>
     </article>
   )

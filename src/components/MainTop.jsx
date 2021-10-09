@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import OrderForm from './OrderForm';
 import PlusIcon from '../../public/img/plus.svg';
 
-const MainTop = () => {
+const MainTop = ({ orders, setOrders }) => {
   const [formShow, setformShow] = useState(false);
   return (
     <section className='main-top'>
@@ -19,7 +19,7 @@ const MainTop = () => {
           </figure>
         </button>
       </div>
-      <OrderForm classForm={formShow ? 'form show' : 'form'} />
+      <OrderForm orders={orders} setOrders={setOrders} classForm={formShow ? 'form show' : 'form'} />
     </section>
   )
 }

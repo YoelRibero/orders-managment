@@ -3,6 +3,11 @@
   overflow: hidden;
   transition: all ease-in-out .5s;
   width: 100%;
+  @media screen and (min-width: 801px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   &.show {
     margin-top: $spacer;
     max-height: 500px;
@@ -11,6 +16,12 @@
     margin-bottom: $spacer;
     position: relative;
     width: 100%;
+    @media screen and (min-width: 801px) {
+      width: 48%;
+      &.textarea {
+        width: 100%;
+      }
+    }
     label {
       color: $muted;
       display: block;
@@ -48,6 +59,9 @@
       &:hover {
         background-color: lighten($primary, 5);
       }
+    }
+    @media screen and (min-width: 801px) {
+      width: 100%;
     }
   }
   &-message {
