@@ -20,7 +20,6 @@ const OrderForm = ({ classForm, orders, setOrders }) => {
     initialValues={INITIAL_VALUE_FORM}
       onSubmit={(values, { resetForm }) => {
         values.id = uuidv4();
-        console.log({values});
         const newOrders = [...orders, values];
         window.localStorage.setItem('orders', JSON.stringify(newOrders));
         setOrders(newOrders);
