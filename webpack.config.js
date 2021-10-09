@@ -43,6 +43,18 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|ico)$/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      },
     ],
   },
   plugins: [

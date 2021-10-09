@@ -1,0 +1,37 @@
+.main {
+  &-top {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--title {
+      h4 {
+        color: $primary;
+        margin: 0 0 $spacer / 2;
+      }
+      p {
+        color: $muted;
+        font-size: $font-size-xs;
+        margin: 0;
+      }
+    }
+    &--iconForm {
+      button {
+        background-color: transparent;
+        border: 0;
+      }
+      figure {
+        @include icons-style;
+        svg {
+          transition: all ease-out .3s;
+        }
+      }
+      &.active {
+        svg {
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+}
